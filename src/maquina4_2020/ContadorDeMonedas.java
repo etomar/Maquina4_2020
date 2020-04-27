@@ -17,13 +17,16 @@ private float disponible;
 public void iniciarContadorDeMonedas(float i){
     disponible = i;
 }
-
+public ContadorDeMonedas(){
+    cantidad = 0;
+    disponible =0;
+}
 public float saldo(){
     return cantidad;
 }
 
 public void insertarMoneda(float m){
-    cantidad=m;
+    cantidad+=m;
 }
 public float darCambioDe(float c){
     float cantVieja=cantidad;
