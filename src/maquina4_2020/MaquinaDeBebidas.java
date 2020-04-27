@@ -4,7 +4,7 @@ class MaquinaDeBebidas
 {
     private DispensadorDeBotes cola,limon, naranja, tonica, agua;
     private float precio;
-
+    private ContadorDeMonedas contador; 
     public void iniciarMaquinaDeBebidas (float m, int b, float pvp){
     cola = new DispensadorDeBotes(b);
     limon = new DispensadorDeBotes(b);
@@ -34,10 +34,10 @@ class MaquinaDeBebidas
     private void ordenMonedas (char o){
         
         
-        if(o == 'A'){contador.insertarMoneda(0.05);}
-        else if(o == 'B'){contador.insertarMoneda(0.10);}
-        else if(o == 'C'){contador.insertarMoneda(0.20);}
-        else if(o == 'D'){contador.insertarMoneda(0.50);}
+        if(o == 'A'){contador.insertarMoneda((float) 0.05);}
+        else if(o == 'B'){contador.insertarMoneda((float) 0.10);}
+        else if(o == 'C'){contador.insertarMoneda((float) 0.20);}
+        else if(o == 'D'){contador.insertarMoneda((float) 0.50);}
         else if(o == 'E'){contador.insertarMoneda(1);}
         else if(o == 'R'){contador.insertarMoneda(-contador.saldo());}
         
@@ -47,7 +47,7 @@ class MaquinaDeBebidas
     private void ordenSeleccion (char o){
         if(o == 1){
             if(cola.pulsarBoton()){
-                    if(precio<=contador.Saldo()){
+                    if(precio<=contador.saldo()){
                         cola.iniciarDispensadorDeBotes(cola.botesDisponibles ()-1);
                     }else{
                         System.out.println("No hay saldo");
@@ -57,7 +57,7 @@ class MaquinaDeBebidas
                 }}
         else if(o == 2){
             if(limon.pulsarBoton()){
-                    if(precio<=contador.Saldo()){
+                    if(precio<=contador.saldo()){
                         limon.iniciarDispensadorDeBotes(limon.botesDisponibles ()-1);
                     }else{
                         System.out.println("No hay saldo");
@@ -67,7 +67,7 @@ class MaquinaDeBebidas
                 }}
         else if(o == 3){ 
             if(naranja.pulsarBoton()){
-                    if(precio<=contador.Saldo()){
+                    if(precio<=contador.saldo()){
                         naranja.iniciarDispensadorDeBotes(naranja.botesDisponibles ()-1);
                     }else{
                         System.out.println("No hay saldo");
@@ -77,7 +77,7 @@ class MaquinaDeBebidas
                 }}
         else if(o == 4){
             if(tonica.pulsarBoton()){
-                    if(precio<=contador.Saldo()){
+                    if(precio<=contador.saldo()){
                         tonica.iniciarDispensadorDeBotes(tonica.botesDisponibles ()-1);
                     }else{
                         System.out.println("No hay saldo");
@@ -87,7 +87,7 @@ class MaquinaDeBebidas
                 }}
         else if(o == 5){
             if(agua.pulsarBoton()){
-                    if(precio<=contador.Saldo()){
+                    if(precio<=contador.saldo()){
                         agua.iniciarDispensadorDeBotes(agua.botesDisponibles ()-1);
                     }else{
                         System.out.println("No hay saldo");
