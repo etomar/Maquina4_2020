@@ -20,7 +20,7 @@ public class Maquina4_2020 {
      */
     public static void main(String[] args) throws IOException {
         //Scanner tec = new Scanner(System.in);
-        MaquinaBebidas mi_maquina = new MaquinaBebidas();
+        MaquinaDeBebidas mi_maquina = new MaquinaDeBebidas();
 	char c;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
 	//inicializo la maquina con:
